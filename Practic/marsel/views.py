@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login
 from .forms import RegistrationForm, LoginForm
+from .models import Course
 
 
 def register(request):
@@ -62,3 +63,8 @@ def teacher_login(request):
 def teacher_dashboard(request):
     return render(request, 'teacher/dashboard.html')
 
+
+
+def dashboard(request):
+    course = Course.objects.order_by('-date1')
+    return render(request, 'main/header.html', {'course': course})
