@@ -30,7 +30,6 @@ def user_login(request):
                 auth_login(request, user)
                 return redirect('dashboard')
             else:
-                # Если пользователь с такими учетными данными не найден
                 messages.error(request, 'Неверное имя пользователя или пароль. Пожалуйста, попробуйте снова.')
     else:
         form = LoginForm()
@@ -39,3 +38,5 @@ def user_login(request):
 
 def dashboard(request):
     return render(request, 'dashboard.html')
+
+
