@@ -1,8 +1,10 @@
 from django.urls import path
-from .views import register, user_login, dashboard
+from .import views
 
 urlpatterns = [
-    path('register/', register, name='register'),
-    path('login/', user_login, name='login'),
-    path('dashboard/', dashboard, name='dashboard')
+    path('register/', views.register, name='register'),
+    path('user_login/', views.user_login, name='user_login'),
+    path('user_dashboard/', views.user_dashboard, name='user_dashboard'),
+    path('teacher_login/', views.teacher_login, name='teacher_login'),
+    path('teacher_dashboard/', views.teacher_dashboard, name='teacher_dashboard')
 ]
