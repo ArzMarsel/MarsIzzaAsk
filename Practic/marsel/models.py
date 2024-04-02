@@ -9,10 +9,10 @@ class Course(models.Model):
     date2 = models.DateField("Дата окончания:")
     teachers = models.ManyToManyField(User, related_name='courses')
     lecture_title = models.CharField('Лекции', max_length=100)
-    lecture_video = models.FileField(upload_to='media/lecture/', max_length=5 * 1024 * 1024)
+    lecture_video = models.FileField(upload_to='media/lectures/', max_length=5*1024*1024)
+    video_url = models.URLField('URL видео')
 
     def __str__(self):
-
         return self.title
 
 

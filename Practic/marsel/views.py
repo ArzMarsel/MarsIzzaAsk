@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, logout, login as auth_login
 from .forms import RegistrationForm, LoginForm, CourseForm
 from .models import Course, Lecture, Assignment
-
+from django.contrib.auth.decorators import login_required
 
 def register(request):
     if request.method == 'POST':
@@ -113,3 +113,11 @@ def edit_user(request, user_id):
         return redirect('manage_users')
     else:
         return render(request, 'edit_user.html', {'user': user})
+
+
+def lectures(request, course_id):
+    course = Course.objects.get(id=course_id)
+    lecture_video = course.lecture_video
+    video_url = lecture_video.url
+    return render(request, 'lectures.html', {'course': course, 'lectures': lectures})
+
