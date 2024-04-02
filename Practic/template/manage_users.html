@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Manage Users</title>
+    <title>Управление пользователями</title>
 </head>
 <body>
-    <h2>Manage Users</h2>
+    <h2>Юзеры</h2>
     <ul>
         {% for user in users %}
             <li>{{ user.username }}</li>
-            <!-- Add links to edit and delete user -->
+           <!-- Редактирование пользователей -->
+            <a href="{% url 'edit_user' user.id %}">Редактировать</a>
         {% endfor %}
     </ul>
 </body>

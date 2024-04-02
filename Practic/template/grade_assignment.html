@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Grade Assignment</title>
+    <title>Выставление оценок</title>
 </head>
 <body>
-    <h2>Grade Assignment</h2>
+    <h2>Оценки</h2>
     <form method="post">
         {% csrf_token %}
-        <!-- Add input fields for grade and comments here -->
-        <button type="submit">Submit Grade</button>
+        <!-- Поля для ввода оценки и комментариев -->
+        <input type="text" name="grade" placeholder="Grade">
+        <textarea name="comments" placeholder="Comments"></textarea>
+        <button type="submit">Поставить оценку</button>
     </form>
 </body>
 </html>

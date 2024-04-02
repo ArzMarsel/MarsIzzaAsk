@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Edit Course</title>
+    <title>Редактировать курс</title>
 </head>
 <body>
-    <h2>Edit Course</h2>
+    <h2>Редактировать курс</h2>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Save Changes</button>
+        <button type="submit">Сохранить изменения</button>
     </form>
 </body>
 </html>

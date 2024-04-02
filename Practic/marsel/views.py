@@ -115,9 +115,9 @@ def edit_user(request, user_id):
         return render(request, 'edit_user.html', {'user': user})
 
 
-def lectures(request, course_id):
-    course = Course.objects.get(id=course_id)
-    lecture_video = course.lecture_video
-    video_url = lecture_video.url
-    return render(request, 'lectures.html', {'course': course, 'lectures': lectures})
+# def lectures(request, course_id):
+#     course = Course.objects.get(id=course_id)
+#     lecture_video = course.lecture_video
+#     video_url = lecture_video.url
+#     return render(request, 'lectures.html', {'course': course, 'lectures': lectures})
 
