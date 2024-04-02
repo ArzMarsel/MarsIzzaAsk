@@ -1,6 +1,6 @@
 from django import forms
 from django_recaptcha.fields import ReCaptchaField
-from MarsIzzaAsk.Practic.marsel.models import Course
+from .models import Course
 
 
 class RegistrationForm(forms.Form):
@@ -21,3 +21,8 @@ class LectureForm(forms.ModelForm):
         model = Course
         fields = ['lecture_title', 'lecture_video']
 
+
+class CourseForm(forms.ModelForm):
+    class Meta:
+        model = Course
+        fields = ['title', 'description', 'date1', 'date2', 'teachers']

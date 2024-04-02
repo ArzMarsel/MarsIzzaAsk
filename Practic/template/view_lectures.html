@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Lectures</title>
+</head>
+<body>
+    <h2>View Lectures</h2>
+    {% for lecture in lectures %}
+        <div>
+            <h3>{{ lecture.title }}</h3>
+            <p>{{ lecture.description }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
