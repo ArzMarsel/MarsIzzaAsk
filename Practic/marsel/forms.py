@@ -1,6 +1,6 @@
 from django import forms
 from django_recaptcha.fields import ReCaptchaField
-from MarsIzzaAsk.Practic.marsel.models import Course
+from .models import Course
 
 
 class RegistrationForm(forms.Form):
