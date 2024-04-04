@@ -6,6 +6,7 @@ from .forms import RegistrationForm, LoginForm, CourseForm
 from .models import Course, Lecture, Assignment
 from django.contrib.auth.decorators import login_required
 
+
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
@@ -40,6 +41,7 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('dashboard')
+
 
 def dashboard(request):
     course = Course.objects.order_by('-date1')
@@ -113,10 +115,8 @@ def edit_user(request, user_id):
     else:
         return render(request, 'edit_user.html', {'user': user})
 
-
 # def lectures(request, course_id):
 #     course = Course.objects.get(id=course_id)
 #     lecture_video = course.lecture_video
 #     video_url = lecture_video.url
 #     return render(request, 'lectures.html', {'course': course, 'lectures': lectures})
-
