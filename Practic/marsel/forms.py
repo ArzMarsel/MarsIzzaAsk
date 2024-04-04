@@ -1,5 +1,6 @@
 from django import forms
 from django_recaptcha.fields import ReCaptchaField
+from .models import Course
 
 
 class RegistrationForm(forms.Form):
@@ -14,3 +15,14 @@ class LoginForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput)
     captcha = ReCaptchaField()
 
+
+class LectureForm(forms.ModelForm):
+    class Meta:
+        model = Course
+        fields = ['lecture_title', 'lecture_video']
+
+
+class CourseForm(forms.ModelForm):
+    class Meta:
+        model = Course
+        fields = ['title', 'description', 'date1', 'date2', 'teachers']

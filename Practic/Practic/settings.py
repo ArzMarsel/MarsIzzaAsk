@@ -131,3 +131,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 RECAPTCHA_PUBLIC_KEY = '6Lf3YaEpAAAAAIivWugKy9ggU8tx5gpAGrRDG0-K'
 RECAPTCHA_PRIVATE_KEY = '6Lf3YaEpAAAAAPcjyRaetP7bI9xt07u7h9eyqWLu'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

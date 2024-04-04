@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактировать пользователя</title>
+</head>
+<body>
+    <h2>Редактировать пользователя</h2>
+    <form method="post">
+        {% csrf_token %}
+        <!-- Поля для редактирования данных пользователя -->
+        <input type="text" name="username" value="{{ user.username }}">
+        <input type="email" name="email" value="{{ user.email }}">
+        <button type="submit">Схоарнить изменения</button>
+    </form>
+</body>
+</html>
