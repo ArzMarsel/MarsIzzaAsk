@@ -64,7 +64,6 @@ def teacher_dashboard(request):
     return render(request, 'teacher/dashboard.html')
 
 
-
 def dashboard(request):
     course = Course.objects.order_by('-date1')
     return render(request, 'main/header.html', {'course': course})
